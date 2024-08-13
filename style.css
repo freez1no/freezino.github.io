@@ -10,13 +10,12 @@ header {
     padding: 20px;
     text-align: center;
     background-size: 200% 200%;
-    animation: backgroundAnimation 15s ease infinite;
+    opacity: 0; /* 초기 불투명도 설정 */
+    transition: opacity 2s ease-in-out; /* 부드러운 전환 */
 }
 
-@keyframes backgroundAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+header.fade-in {
+    opacity: 1; /* 애니메이션 실행 시 불투명도 설정 */
 }
 
 .menu {

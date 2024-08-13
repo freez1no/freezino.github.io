@@ -1,107 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Page</title>
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: #000;
-            color: #fff;
-        }
-        .container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            max-width: 2556px;
-            max-height: 1179px;
-            aspect-ratio: 2556 / 1179;
-        }
-        .header, .footer {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            padding: 10px 20px;
-            background-color: #333;
-        }
-        .header {
-            align-items: center;
-        }
-        .content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
-        .upload-btn {
-            background-color: #555;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-bottom: 20px;
-        }
-        .upload-btn:hover {
-            background-color: #777;
-        }
-        .text-input {
-            width: 80%;
-            padding: 10px;
-            border: 1px solid #555;
-            border-radius: 5px;
-            background-color: #222;
-            color: #fff;
-        }
-        .btn {
-            background-color: #555;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .btn:hover {
-            background-color: #777;
-        }
-        .left-btn {
-            text-align: left;
-        }
-        .right-btn {
-            text-align: right;
-        }
-    </style>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <button class="btn left-btn" onclick="history.back()">이전으로</button>
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="#" data-target="thesis">논문</a></li>
+                <li><a href="#" data-target="dev-log">개발일지</a></li>
+                <li><a href="#" data-target="portfolio">포트폴리오</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="content">
+        <div id="thesis" class="tab-content">
+            <h2>논문</h2>
+            <p>테스트.</p>
         </div>
-        <div class="content">
-            <label class="upload-btn">
-                사진 업로드
-                <input type="file" accept="image/*" style="display:none">
-            </label>
-            <textarea class="text-input" rows="5" placeholder="요청사항을 입력하세요"></textarea>
+        <div id="dev-log" class="tab-content">
+            <h2>개발일지</h2>
+            <p>ㅁㄴㅇ.</p>
         </div>
-        <div class="footer">
-            <div></div>
-            <button class="btn right-btn">다음 페이지</button>
+        <div id="portfolio" class="tab-content">
+            <h2>포트폴리오</h2>
+            <p>ㅇㅇㅇㅇ.</p>
         </div>
-    </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>

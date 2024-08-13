@@ -86,4 +86,194 @@ header {
         clip: rect(31px, 550px, 66px, 0);
         transform: skew(0.3deg);
     }
-    
+    50% {
+        clip: rect(78px, 550px, 134px, 0);
+        transform: skew(0.3deg);
+    }
+    55% {
+        clip: rect(20px, 550px, 54px, 0);
+        transform: skew(0.3deg);
+    }
+    60% {
+        clip: rect(52px, 550px, 96px, 0);
+        transform: skew(0.3deg);
+    }
+    65% {
+        clip: rect(34px, 550px, 78px, 0);
+        transform: skew(0.3deg);
+    }
+    70% {
+        clip: rect(86px, 550px, 144px, 0);
+        transform: skew(0.3deg);
+    }
+    75% {
+        clip: rect(46px, 550px, 98px, 0);
+        transform: skew(0.3deg);
+    }
+    80% {
+        clip: rect(26px, 550px, 74px, 0);
+        transform: skew(0.3deg);
+    }
+    85% {
+        clip: rect(69px, 550px, 132px, 0);
+        transform: skew(0.3deg);
+    }
+    90% {
+        clip: rect(20px, 550px, 56px, 0);
+        transform: skew(0.3deg);
+    }
+    95% {
+        clip: rect(67px, 550px, 119px, 0);
+        transform: skew(0.3deg);
+    }
+    100% {
+        clip: rect(45px, 550px, 90px, 0);
+        transform: skew(0.3deg);
+    }
+}
+
+@keyframes glitch-anim2 {
+    0% {
+        clip: rect(44px, 550px, 56px, 0);
+        transform: skew(0.3deg);
+    }
+    5% {
+        clip: rect(20px, 550px, 86px, 0);
+        transform: skew(0.3deg);
+    }
+    10% {
+        clip: rect(67px, 550px, 124px, 0);
+        transform: skew(0.3deg);
+    }
+    15% {
+        clip: rect(88px, 550px, 140px, 0);
+        transform: skew(0.3deg);
+    }
+    20% {
+        clip: rect(45px, 550px, 96px, 0);
+        transform: skew(0.3deg);
+    }
+    25% {
+        clip: rect(72px, 550px, 128px, 0);
+        transform: skew(0.3deg);
+    }
+    30% {
+        clip: rect(31px, 550px, 82px, 0);
+        transform: skew(0.3deg);
+    }
+    35% {
+        clip: rect(26px, 550px, 74px, 0);
+        transform: skew(0.3deg);
+    }
+    40% {
+        clip: rect(50px, 550px, 99px, 0);
+        transform: skew(0.3deg);
+    }
+    45% {
+        clip: rect(31px, 550px, 66px, 0);
+        transform: skew(0.3deg);
+    }
+    50% {
+        clip: rect(78px, 550px, 134px, 0);
+        transform: skew(0.3deg);
+    }
+    55% {
+        clip: rect(20px, 550px, 54px, 0);
+        transform: skew(0.3deg);
+    }
+    60% {
+        clip: rect(52px, 550px, 96px, 0);
+        transform: skew(0.3deg);
+    }
+    65% {
+        clip: rect(34px, 550px, 78px, 0);
+        transform: skew(0.3deg);
+    }
+    70% {
+        clip: rect(86px, 550px, 144px, 0);
+        transform: skew(0.3deg);
+    }
+    75% {
+        clip: rect(46px, 550px, 98px, 0);
+        transform: skew(0.3deg);
+    }
+    80% {
+        clip: rect(26px, 550px, 74px, 0);
+        transform: skew(0.3deg);
+    }
+    85% {
+        clip: rect(69px, 550px, 132px, 0);
+        transform: skew(0.3deg);
+    }
+    90% {
+        clip: rect(20px, 550px, 56px, 0);
+        transform: skew(0.3deg);
+    }
+    95% {
+        clip: rect(67px, 550px, 119px, 0);
+        transform: skew(0.3deg);
+    }
+    100% {
+        clip: rect(45px, 550px, 90px, 0);
+        transform: skew(0.3deg);
+    }
+}
+
+@keyframes glitch-skew {
+    0% {
+        transform: skew(0.3deg);
+    }
+    50% {
+        transform: skew(-0.3deg);
+    }
+    100% {
+        transform: skew(0.3deg);
+    }
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5); /* 투명한 배경 */
+}
+
+.menu li {
+    margin: 0 10px;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* 투명한 배경 효과 */
+}
+
+#content {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

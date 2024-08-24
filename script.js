@@ -7,15 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabButtons = document.querySelectorAll('.tab-btn');
     const projectTabButtons = document.querySelectorAll('.project-tab-btn');
 
-    // ÃÊ±â »óÅÂ ¼³Á¤
+    // ï¿½Ê±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     sections.forEach(section => {
         if (section.id !== 'hero') {
             section.classList.add('hidden');
         }
     });
 
-    // Thesis ¼½¼Ç ±âº» ÅÇ ¼³Á¤
-    const defaultTabId = 'kiice';
+    // Thesis ï¿½ï¿½ï¿½ï¿½ ï¿½âº» ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    const defaultTabId = 'kocon';
     tabButtons.forEach(btn => {
         const tabId = btn.getAttribute('data-tab');
         if (tabId === defaultTabId) {
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Projects ¼½¼Ç ±âº» ÅÇ ¼³Á¤
+    // Projects ï¿½ï¿½ï¿½ï¿½ ï¿½âº» ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     const defaultProjectTabId = 'game';
     projectTabButtons.forEach(btn => {
         const categoryId = btn.getAttribute('data-category');
@@ -40,11 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ·Îµù ¾Ö´Ï¸ÞÀÌ¼Ç
+    // ï¿½Îµï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½
     setTimeout(() => {
         preloader.classList.add('hidden');
-        document.body.style.overflow = 'auto'; // È­¸é ¿­±â ÈÄ ½ºÅ©·Ñ Çã¿ë
-    }, 500); // 0.5ÃÊ ÈÄ ·Îµù ¾Ö´Ï¸ÞÀÌ¼Ç Á¾·á
+        document.body.style.overflow = 'auto'; // È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½
+    }, 500); // 0.5ï¿½ï¿½ ï¿½ï¿½ ï¿½Îµï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     const showSection = (targetId) => {
         sections.forEach(section => {
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Thesis ÅÇ ¹öÆ° Å¬¸¯ ÀÌº¥Æ®
+    // Thesis ï¿½ï¿½ ï¿½ï¿½Æ° Å¬ï¿½ï¿½ ï¿½Ìºï¿½Æ®
     tabButtons.forEach(button => {
         button.addEventListener('click', () => {
             const targetId = button.getAttribute('data-tab');
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Projects ÅÇ ¹öÆ° Å¬¸¯ ÀÌº¥Æ®
+    // Projects ï¿½ï¿½ ï¿½ï¿½Æ° Å¬ï¿½ï¿½ ï¿½Ìºï¿½Æ®
     projectTabButtons.forEach(button => {
         button.addEventListener('click', () => {
             const targetCategory = button.getAttribute('data-category');
@@ -110,4 +110,53 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById(targetCategory).classList.add('active');
         });
     });
+
+    // Glitch Timeline Function
+var $text = document.querySelectorAll('.hero-buttons button'),
+$filter = document.querySelector('.svg-sprite'),
+$turb = $filter.querySelector('#filter feTurbulence'),
+turbVal = { val: 0.000001 },
+turbValX = { val: 0.000001 };
+
+var glitchTimeline = function($text) {
+var timeline = gsap.timeline({
+    repeat: -1,
+    repeatDelay: 2,
+    paused: true,
+    onUpdate: function () {
+        $turb.setAttribute('baseFrequency', turbVal.val + ' ' + turbValX.val);
+    }
+});
+
+timeline
+    .to(turbValX, { duration: 0.1, val: 0.5 })
+    .to(turbVal, { duration: 0.1, val: 0.02 })
+    .set(turbValX, { val: 0.000001 })
+    .set(turbVal, { val: 0.000001 })
+    .to(turbValX, { duration: 0.2, val: 0.4 }, 0.4)
+    .to(turbVal, { duration: 0.2, val: 0.002 }, 0.4)
+    .set(turbValX, { val: 0.000001 })
+    .set(turbVal, { val: 0.000001 });
+
+return {
+    start: function() {
+        timeline.play(0);
+    },
+    stop: function() {
+        timeline.pause();
+    }
+};
+};
+
+document.querySelectorAll('.hero-buttons button')
+.forEach(button => {
+    var btnGlitch = new glitchTimeline(button);
+    button.addEventListener('mouseenter', function () {
+        btnGlitch.start();
+    });
+
+    button.addEventListener('mouseleave', function () {
+        btnGlitch.stop();
+    });
+});
 });

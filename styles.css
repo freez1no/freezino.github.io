@@ -4,19 +4,20 @@ html, body {
     margin: 0;
     padding: 0;
     color: #3498db;
-    overflow-x:hidden;
+    overflow-x: hidden;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    min-height:100%;
-    color:white;
-    background-image:url('cover.gif');
-    background-repeat:no-repeat;
-    background-size:cover;
-    background-attachment:fixed;
+    min-height: 100%;
+    color: white;
+    background-image: url('cover.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
+
 #preloader {
     position: fixed;
     top: 0;
@@ -53,7 +54,7 @@ body {
 header {
     background-color: rgb(0,0,0,0.85);
     color: #fff;
-    padding:0;
+    padding: 0;
     text-align: center;
     position: fixed;
     width: 100%;
@@ -104,7 +105,7 @@ header {
 
 section {
     padding: 60px 20px;
-    max-width:100%
+    max-width: 100%
 }
 
     section.hidden {
@@ -119,7 +120,7 @@ section {
 footer {
     background-color: rgb(0,0,0,0.85);
     text-align: center;
-    padding:4px;
+    padding: 4px;
     font-size: 14px;
     color: rgb(255,255,255);
     width: 100%;
@@ -127,6 +128,7 @@ footer {
     bottom: 0;
     left: 0;
 }
+
 .box {
     width: 600px;
     height: 300px;
@@ -134,7 +136,7 @@ footer {
     position: center;
     overflow: hidden;
     transform: translate3d(0, 0, 0);
-    margin:auto;
+    margin: auto;
 }
 
 .wave {
@@ -161,6 +163,7 @@ footer {
         opacity: .1;
         background: white;
     }
+
 .title {
     position: absolute;
     left: 0;
@@ -188,11 +191,13 @@ footer {
         transform: rotate(360deg);
     }
 }
+
 #preloader.hidden {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
+
 .hero-buttons {
     display: flex;
     justify-content: center;
@@ -242,9 +247,11 @@ footer {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             filter: url(#filter); /* 필터 적용 */
         }
-        .svg-sprite {
-            display: none;
-          }
+
+.svg-sprite {
+    display: none;
+}
+
 .hero-shape {
     position: absolute;
     width: 300px;
@@ -273,6 +280,7 @@ footer {
         opacity: 0.3;
     }
 }
+
 #papers {
     color: #ffffff;
     padding: 60px 20px;
@@ -332,6 +340,23 @@ footer {
         background: #2980b9;
     }
 
+.paper-link2 {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #ffffff;
+    color: #000000;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+    .paper-link2:hover {
+        background: #000000;
+        color:#ffffff
+    }
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -387,7 +412,7 @@ footer {
     padding: 60px 20px;
     background-color: #f5f5f7;
     text-align: center;
-    color:#333;
+    color: #333;
 }
 
 /* 프로필 사진 스타일 */
@@ -507,7 +532,7 @@ footer {
 .profile-container {
     text-align: center;
     margin-bottom: 40px;
-    margin-top:40px;
+    margin-top: 40px;
 }
 
 .profile-picture-wrapper {
@@ -542,7 +567,7 @@ footer {
     animation: scaleUp 1s ease forwards;
     animation-delay: 1.2s;
     margin-bottom: 80px;
-    max-width:80%;
+    max-width: 80%;
     margin: 0 auto;
 }
 
@@ -554,7 +579,7 @@ footer {
     .about-content p {
         font-size: 18px;
         line-height: 1.6;
-        padding-bottom:50px;
+        padding-bottom: 50px;
     }
 
 @keyframes slideIn {
@@ -590,8 +615,8 @@ footer {
     padding: 10px;
     background: #f0f0f0;
     border: 1px solid #ddd;
-    margin-bottom:20px;
-    margin-right:10px;
+    margin-bottom: 20px;
+    margin-right: 10px;
 }
 
     .tab-btn.active {
@@ -625,11 +650,11 @@ footer {
     border-radius: 8px;
 }
 
-.project-tab-btn.active,
-.project-tab-btn:hover {
-    background: #333;
-    color: #fff;
-}
+    .project-tab-btn.active,
+    .project-tab-btn:hover {
+        background: #333;
+        color: #fff;
+    }
 
 .project-content {
     display: none; /* 기본적으로 모든 콘텐츠는 숨김 */
@@ -637,9 +662,9 @@ footer {
     gap: 1rem;
 }
 
-.project-content.active {
-    display: grid; /* active 클래스가 적용된 콘텐츠만 표시 */
-}
+    .project-content.active {
+        display: grid; /* active 클래스가 적용된 콘텐츠만 표시 */
+    }
 
 .project-item {
     background: rgba(255,255,255, 0.75);
@@ -655,14 +680,14 @@ footer {
     transform: translateY(20px);
 }
 
-.project-item:nth-child(even) {
-    background: rgba(255, 255, 255, 0.90);
-}
+    .project-item:nth-child(even) {
+        background: rgba(255, 255, 255, 0.90);
+    }
 
-.project-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
+    .project-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
 
 .project-photo img {
     width: 100%;
@@ -697,14 +722,14 @@ footer {
 
 .certificate-item {
     background: #f9f9f9;
-    color:#000000;
+    color: #000000;
     border-radius: 8px;
     padding: 1rem;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width:500px;
-    height:300px;
+    width: 500px;
+    height: 300px;
 }
 
     .certificate-item:hover {
@@ -719,7 +744,7 @@ footer {
 
 .certificate-item img {
     min-width: 500px;
-    min-height:250px;
+    min-height: 250px;
     border-radius: 8px;
 }
 
@@ -743,8 +768,8 @@ footer {
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease;
-    min-width:800px;
-    min-height:800px;
+    min-width: 800px;
+    min-height: 800px;
 }
 
     .etc-item:hover {
@@ -763,7 +788,7 @@ footer {
 }
 
 .etc-title {
-    color:#333;
+    color: #333;
     font-size: 1.2rem;
     margin: 0.5rem 0;
 }

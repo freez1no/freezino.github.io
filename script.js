@@ -6,15 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroSection = document.getElementById('hero');
     const tabButtons = document.querySelectorAll('.tab-btn');
     const projectTabButtons = document.querySelectorAll('.project-tab-btn');
-
-    // �ʱ� ���� ����
     sections.forEach(section => {
         if (section.id !== 'hero') {
             section.classList.add('hidden');
         }
     });
-
-    // Thesis ���� �⺻ �� ����
     const defaultTabId = 'kocon';
     tabButtons.forEach(btn => {
         const tabId = btn.getAttribute('data-tab');
@@ -26,8 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById(tabId).classList.remove('active');
         }
     });
-
-    // Projects ���� �⺻ �� ����
     const defaultProjectTabId = 'game';
     projectTabButtons.forEach(btn => {
         const categoryId = btn.getAttribute('data-category');
@@ -39,12 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById(categoryId).classList.remove('active');
         }
     });
-
-    // �ε� �ִϸ��̼�
     setTimeout(() => {
         preloader.classList.add('hidden');
-        document.body.style.overflow = 'auto'; // ȭ�� ���� �� ��ũ�� ���
-    }, 500); // 0.5�� �� �ε� �ִϸ��̼� ����
+        document.body.style.overflow = 'auto';
+    }, 500); // 딜레이부분
 
     const showSection = (targetId) => {
         sections.forEach(section => {
@@ -88,8 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
             showSection(targetId);
         });
     });
-
-    // Thesis �� ��ư Ŭ�� �̺�Ʈ
     tabButtons.forEach(button => {
         button.addEventListener('click', () => {
             const targetId = button.getAttribute('data-tab');
@@ -99,8 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById(targetId).classList.add('active');
         });
     });
-
-    // Projects �� ��ư Ŭ�� �̺�Ʈ
     projectTabButtons.forEach(button => {
         button.addEventListener('click', () => {
             const targetCategory = button.getAttribute('data-category');
@@ -110,8 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById(targetCategory).classList.add('active');
         });
     });
-
-    // Glitch Timeline Function
 var $text = document.querySelectorAll('.hero-buttons button'),
 $filter = document.querySelector('.svg-sprite'),
 $turb = $filter.querySelector('#filter feTurbulence'),
@@ -153,10 +139,10 @@ document.querySelectorAll('.hero-buttons button')
     var btnGlitch = new glitchTimeline(button);
     button.addEventListener('mouseenter', function () {
         btnGlitch.start();
-    });
+        });
 
     button.addEventListener('mouseleave', function () {
         btnGlitch.stop();
-    });
+        });
 });
 });

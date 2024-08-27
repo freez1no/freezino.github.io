@@ -740,7 +740,7 @@ footer {
 
 .certificate-grid {
     display: grid;
-    grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns:repeat(auto-fill, minmax(500px, 1fr));
     gap: 1rem;
 }
 
@@ -752,10 +752,11 @@ footer {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 300px;
-    height: 60%; /* 부모 요소의 전체 높이를 사용 */
+    width: 500px;
+    height: auto;
     position: relative;
     flex-direction: column;
+    opacity: 0;
 }
 
     .certificate-item:hover {
@@ -763,43 +764,38 @@ footer {
         box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     }
 
-.certificate-item:hover img {
-    transform: translate(-50%, -50%) scale(2); /* 이미지 확대 및 중앙 위치 */
-    position: center;
-    top: 30%;
-    left: 30%;
-    width: 30vw; /* 전체 너비의 90% */
-    height: auto;
-    max-width: 50vw; /* 최대 너비를 뷰포트의 100%로 설정 */
-    max-height: 50vh; /* 최대 높이를 뷰포트의 100%로 설정 */
-    z-index: 9999; /* 최상단으로 설정 */
-    object-fit: contain; /* 이미지 비율 유지하며 확대 */
-}
-
 .certificate-title {
     font-size: 1.2rem;
     margin-top: 0.5rem;
 }
 
 .certificate-item img {
-    width: auto; /* 가로 비율에 맞게 자동 조정 */
-    height: auto; /* 세로 비율에 맞게 자동 조정 */
-    max-width: 60%; /* 부모 요소에 맞춰 최대 가로 크기를 제한 */
-    max-height: 60%; /* 부모 요소에 맞춰 최대 세로 크기를 제한 */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 마우스 오버 시 애니메이션 */
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
 }
 
 .certificate-item img:hover {
-    transform: translate(-50%, -50%) scale(1.2); /* 화면 중앙에 맞춰 확대 */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 90vw; /* 전체 너비의 90% */
-    height: auto;
-    max-width: 50vw; /* 최대 너비를 뷰포트의 100%로 설정 */
-    max-height: 50vh; /* 최대 높이를 뷰포트의 100%로 설정 */
-    object-fit: contain;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
 }
+#certificates .certificate-item {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+    #certificates .certificate-item:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+
+    #certificates .certificate-item:nth-child(2) {
+        animation-delay: 0.3s;
+    }
+
+    #certificates .certificate-item:nth-child(3) {
+        animation-delay: 0.5s;
+    }
+
 /* Etc 섹션 스타일 */
 #etc {
     padding: 2rem;
@@ -822,6 +818,7 @@ footer {
     transition: transform 0.3s ease;
     min-width: 800px;
     min-height: 800px;
+    opacity: 0;
 }
 
     .etc-item:hover {
@@ -869,6 +866,22 @@ footer {
     display: block;
     opacity: 1;
 }
+
+#etc .etc-item {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+    #etc .etc-item:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+
+    #etc .etc-item:nth-child(2) {
+        animation-delay: 0.3s;
+    }
+
+    #etc .etc-item:nth-child(3) {
+        animation-delay: 0.5s;
+    }
 
 /* 버튼 애니메이션 메인*/
 * {

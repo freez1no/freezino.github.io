@@ -658,7 +658,7 @@ footer {
 
 .project-content {
     display: none; /* 기본적으로 모든 콘텐츠는 숨김 */
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
     gap: 2rem;
 }
 
@@ -752,7 +752,7 @@ footer {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 500px;
+    width: 600px;
     height: auto;
     position: relative;
     flex-direction: column;
